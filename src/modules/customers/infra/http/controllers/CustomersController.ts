@@ -4,7 +4,6 @@ import ListCustomerService from '@modules/customers/services/ListCustomerService
 import ShowCustomerService from '@modules/customers/services/ShowCustomerService';
 import UpdateCustomerService from '@modules/customers/services/UpdateCustomerService';
 import { Request, Response } from 'express';
-import CustomersRepository from '../../typeorm/repositories/CustomersRepository';
 import { container } from 'tsyringe';
 
 export default class CustomersController {
