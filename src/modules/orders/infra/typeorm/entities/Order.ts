@@ -10,9 +10,10 @@ import {
 
 import OrdersProducts from './OrdersProducts';
 import Customer from '@modules/customers/infra/typeorm/entities/Customer';
+import { IOrder } from '@modules/orders/domain/models/IOrder';
 
 @Entity('orders')
-class Order {
+class Order implements IOrder {
   @PrimaryGeneratedColumn('uuid')
   id: string;
   @ManyToOne(() => Customer)
