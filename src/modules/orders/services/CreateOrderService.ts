@@ -1,24 +1,10 @@
-import ProductRepository from '@modules/products/infra/typeorm/repositories/ProductsRepository';
 import AppError from '@shared/errors/AppError';
-import { getCustomRepository } from 'typeorm';
-import Order from '../infra/typeorm/entities/Order';
-import OrdersRepository from '../infra/typeorm/repositories/OrdersRepository';
-import CustomersRepository from '@modules/customers/infra/typeorm/repositories/CustomersRepository';
 import { inject, injectable } from 'tsyringe';
 import { IOrdersRepository } from '../domain/repositories/IOrdersRepository';
 import { ICustomersRepository } from '@modules/customers/domain/repositories/ICustomersRepository';
 import { IRequestCreateOrder } from '../domain/models/IRequestCreateOrder';
 import { IOrder } from '../domain/models/IOrder';
-
-interface IProduct {
-  id: string;
-  quantity: number;
-}
-
-interface IRequest {
-  customer_id: string;
-  products: IProduct[];
-}
+import { IProductsRepository } from '@modules/products/domain/repositories/IProductsRepository';
 
 @injectable()
 class CreateOrderService {
