@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import CreateCustomerService from './CreateCustomerService';
-import FakeCustomersRepository from '@modules/customers/domain/repositories/fakes/FakeCustomersRepository';
 import AppError from '@shared/errors/AppError';
+import FakeCustomersRepository from '../domain/fakes/FakeCustomersRepository';
 
 describe('CreateCustomer', () => {
   it('should be able to create a new customer', async () => {
