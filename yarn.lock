@@ -6791,7 +6791,7 @@ typeorm-pagination@2.0.1:
     express "^4.17.1"
     typeorm "^0.2.25"
 
-typeorm@0.2.29, typeorm@^0.2.25:
+typeorm@^0.2.25:
   version "0.2.29"
   resolved "https://registry.npmjs.org/typeorm/-/typeorm-0.2.29.tgz"
   integrity sha512-ih1vrTe3gEAGKRcWlcsTRxTL7gNjacQE498wVGuJ3ZRujtMqPZlbAWuC7xDzWCRjQnkZYNwZQeG9UgKfxSHB5g==
