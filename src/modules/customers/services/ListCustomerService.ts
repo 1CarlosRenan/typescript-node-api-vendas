@@ -29,4 +29,5 @@ class ListCustomerService {
     return customers;
   }
 }
+
 export default ListCustomerService;

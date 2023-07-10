@@ -15,13 +15,18 @@ class CustomersRepository implements ICustomersRepository {
 
   public async create({ name, email }: ICreateCustomer): Promise<Customer> {
     const customer = this.ormRepository.create({ name, email });
+
     await this.ormRepository.save(customer);
+
     return customer;
   }
+
   public async save(customer: Customer): Promise<Customer> {
     await this.ormRepository.save(customer);
+
     return customer;
   }
+
   public async remove(customer: Customer): Promise<void> {
     await this.ormRepository.remove(customer);
   }
@@ -74,4 +79,5 @@ class CustomersRepository implements ICustomersRepository {
     return customer;
   }
 }
+
 export default CustomersRepository;

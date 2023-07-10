@@ -1,8 +1,8 @@
-import AppError from '@shared/errors/AppError';
-import Customer from '../infra/typeorm/entities/Customer';
 import { inject, injectable } from 'tsyringe';
-import { ICustomersRepository } from '../domain/repositories/ICustomersRepository';
+import AppError from '@shared/errors/AppError';
 import { IUpdateCustomer } from '../domain/models/IUpdateCustomer';
+import Customer from '../infra/typeorm/entities/Customer';
+import { ICustomersRepository } from '../domain/repositories/ICustomersRepository';
 
 @injectable()
 class UpdateCustomerService {
