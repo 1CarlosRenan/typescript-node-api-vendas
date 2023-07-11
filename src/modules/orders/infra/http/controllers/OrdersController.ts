@@ -1,9 +1,20 @@
-import CreateOrderService from '@modules/orders/services/CreateOrderService';
-import ShowOrderService from '@modules/orders/services/ShowOrderService';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import CreateOrderService from '@modules/orders/services/CreateOrderService';
+import ShowOrderService from '@modules/orders/services/ShowOrderService';
+import ListOrderService from '@modules/orders/services/ListOrderService';
 
 export default class OrdersController {
+  public async index(request: Request, response: Response): Promise<Response> {
+    const page = request.query.page ? Number(request.query.page) : 1;
+    const limit = request.query.limit ? Number(request.query.limit) : 15;
+    const listOrders = container.resolve(ListOrderService);
+
+    const orders = await listOrders.execute({ page, limit });
+
+    return response.json(orders);
+  }
+
   public async show(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
 

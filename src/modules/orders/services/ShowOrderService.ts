@@ -1,8 +1,8 @@
-import AppError from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
-import { IOrder } from '../domain/models/IOrder';
+import AppError from '@shared/errors/AppError';
 import { IShowOrder } from '../domain/models/IShowOrder';
 import { IOrdersRepository } from '../domain/repositories/IOrdersRepository';
+import { IOrder } from '../domain/models/IOrder';
 
 @injectable()
 class ShowOrderService {
