@@ -1,19 +1,9 @@
+import { inject, injectable } from 'tsyringe';
 import redisCache from '@shared/cache/RedisCache';
 import AppError from '@shared/errors/AppError';
-import { inject, injectable } from 'tsyringe';
-import { getCustomRepository } from 'typeorm';
-import { IProduct } from '../domain/models/IProduct';
 import { IUpdateProduct } from '../domain/models/IUpdateProduct';
 import { IProductsRepository } from '../domain/repositories/IProductsRepository';
-import Product from '../infra/typeorm/entities/Product';
-import ProductRepository from '../infra/typeorm/repositories/ProductsRepository';
-
-interface IRequest {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-}
+import { IProduct } from '../domain/models/IProduct';
 
 @injectable()
 class UpdateProductService {
@@ -36,7 +26,7 @@ class UpdateProductService {
 
     const productExists = await this.productsRepository.findByName(name);
 
-    if (productExists && name !== product.name) {
+    if (productExists) {
       throw new AppError('There is already one product with this name');
     }
 

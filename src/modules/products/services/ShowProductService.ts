@@ -1,8 +1,8 @@
-import AppError from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
-import { IProduct } from '../domain/models/IProduct';
-import { IShowProduct } from '../domain/models/IShowProduct';
+import AppError from '@shared/errors/AppError';
 import { IProductsRepository } from '../domain/repositories/IProductsRepository';
+import { IShowProduct } from '../domain/models/IShowProduct';
+import { IProduct } from '../domain/models/IProduct';
 
 @injectable()
 class ShowProductService {

@@ -1,9 +1,9 @@
+import { inject, injectable } from 'tsyringe';
 import redisCache from '@shared/cache/RedisCache';
 import AppError from '@shared/errors/AppError';
-import { inject, injectable } from 'tsyringe';
 import { ICreateProduct } from '../domain/models/ICreateProduct';
-import { IProduct } from '../domain/models/IProduct';
 import { IProductsRepository } from '../domain/repositories/IProductsRepository';
+import { IProduct } from '../domain/models/IProduct';
 
 @injectable()
 class CreateProductService {
