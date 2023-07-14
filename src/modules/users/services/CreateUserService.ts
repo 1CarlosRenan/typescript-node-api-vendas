@@ -1,6 +1,5 @@
-import AppError from '@shared/errors/AppError';
-import { hash } from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
+import AppError from '@shared/errors/AppError';
 import { ICreateUser } from '../domain/models/ICreateUser';
 import { IUser } from '../domain/models/IUser';
 import { IUsersRepository } from '../domain/repositories/IUsersRepository';

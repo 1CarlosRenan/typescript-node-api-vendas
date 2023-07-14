@@ -1,12 +1,12 @@
+import { inject, injectable } from 'tsyringe';
 import AppError from '@shared/errors/AppError';
 import path from 'path';
 import EtherealMail from '@config/mail/EtherealMail';
 import SESMail from '@config/mail/SESMail';
 import mailConfig from '@config/mail/mail';
-import { inject, injectable } from 'tsyringe';
+import { ISendForgotPasswordEmail } from '../domain/models/ISendForgotPasswordEmail';
 import { IUsersRepository } from '../domain/repositories/IUsersRepository';
 import { IUserTokensRepository } from '../domain/repositories/IUserTokensRepository';
-import { ISendForgotPasswordEmail } from '../domain/models/ISendForgotPasswordEmail';
 
 @injectable()
 class SendForgotPasswordEmailService {
@@ -22,7 +22,7 @@ class SendForgotPasswordEmailService {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
-      throw new AppError('User does not exists.')
+      throw new AppError('User does not exists.');
     }
 
     const { token } = await this.userTokensRepository.generate(user.id);

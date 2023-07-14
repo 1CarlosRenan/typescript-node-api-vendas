@@ -1,8 +1,8 @@
-import AppError from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
+import AppError from '@shared/errors/AppError';
 import { IShowUser } from '../domain/models/IShowUser';
-import { IUser } from '../domain/models/IUser';
 import { IUsersRepository } from '../domain/repositories/IUsersRepository';
+import { IUser } from '../domain/models/IUser';
 
 @injectable()
 class ShowProfileService {

@@ -1,11 +1,11 @@
+import { inject, injectable } from 'tsyringe';
 import AppError from '@shared/errors/AppError';
 import uploadConfig from '@config/upload';
 import DiskStorageProvider from '@shared/providers/StorageProvider/DiskStorageProvider';
 import S3StorageProvider from '@shared/providers/StorageProvider/S3StorageProvider';
-import { inject, injectable } from 'tsyringe';
-import { IUsersRepository } from '../domain/repositories/IUsersRepository';
 import { IUpdateUserAvatar } from '../domain/models/IUpdateUserAvatar';
 import { IUser } from '../domain/models/IUser';
+import { IUsersRepository } from '../domain/repositories/IUsersRepository';
 
 @injectable()
 class UpdateUserAvatarService {
@@ -14,11 +14,11 @@ class UpdateUserAvatarService {
     private usersRepository: IUsersRepository,
   ) {}
 
-    public async execute({
-      user_id,
-      avatarFilename,
-    }: IUpdateUserAvatar): Promise<IUser> {
-      const user = await this.usersRepository.findById(user_id);
+  public async execute({
+    user_id,
+    avatarFilename,
+  }: IUpdateUserAvatar): Promise<IUser> {
+    const user = await this.usersRepository.findById(user_id);
 
     if (!user) {
       throw new AppError('User not found.');
