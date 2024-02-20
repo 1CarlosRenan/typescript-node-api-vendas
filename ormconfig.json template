@@ -4,5 +4,11 @@
   "port": ,
   "username": "",
   "password": "",
-  "database": ""
+  "database": "",
+  "migrations": [
+    ""
+  ],
+  "cli": {
+    "migrationsDir": ""
+  }
 }
