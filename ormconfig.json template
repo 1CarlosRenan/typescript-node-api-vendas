@@ -5,6 +5,7 @@
   "username": "",
   "password": "",
   "database": "",
+    "entities": [""],
   "migrations": [
     ""
   ],
