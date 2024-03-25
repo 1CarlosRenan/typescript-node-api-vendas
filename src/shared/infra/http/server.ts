@@ -9,6 +9,7 @@ import AppError from '@shared/errors/AppError';
 import '@shared/infra/typeorm';
 import uploadConfig from '@config/upload';
 import rateLimiter from './middlewares/rateLimiter';
+import '@shared/container';
 
 const app = express();
 
